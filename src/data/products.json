@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "price": 79.99,
+    "image": "https://via.placeholder.com/300x200?text=Wireless+Headphones",
+    "description": "High-quality wireless headphones with noise cancellation",
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "USB-C Cable",
+    "price": 12.99,
+    "image": "https://via.placeholder.com/300x200?text=USB-C+Cable",
+    "description": "Durable USB-C charging and data cable",
+    "category": "Accessories",
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "name": "4K Webcam",
+    "price": 129.99,
+    "image": "https://via.placeholder.com/300x200?text=4K+Webcam",
+    "description": "Crystal clear 4K video recording webcam",
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "name": "Mechanical Keyboard",
+    "price": 149.99,
+    "image": "https://via.placeholder.com/300x200?text=Mechanical+Keyboard",
+    "description": "RGB mechanical keyboard with custom switches",
+    "category": "Accessories",
+    "inStock": true
+  },
+  {
+    "id": 5,
+    "name": "Laptop Stand",
+    "price": 39.99,
+    "image": "https://via.placeholder.com/300x200?text=Laptop+Stand",
+    "description": "Adjustable aluminum laptop stand",
+    "category": "Accessories",
+    "inStock": false
+  },
+  {
+    "id": 6,
+    "name": "Portable SSD",
+    "price": 199.99,
+    "image": "https://via.placeholder.com/300x200?text=Portable+SSD",
+    "description": "1TB ultra-fast portable solid state drive",
+    "category": "Storage",
+    "inStock": true
+  },
+  {
+    "id": 7,
+    "name": "Phone Charger",
+    "price": 24.99,
+    "image": "https://via.placeholder.com/300x200?text=Phone+Charger",
+    "description": "Fast-charging universal phone charger",
+    "category": "Accessories",
+    "inStock": true
+  },
+  {
+    "id": 8,
+    "name": "Monitor Arm",
+    "price": 89.99,
+    "image": "https://via.placeholder.com/300x200?text=Monitor+Arm",
+    "description": "Single monitor arm with full articulation",
+    "category": "Accessories",
+    "inStock": true
+  }
+]
