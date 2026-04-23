@@ -16,6 +16,10 @@ build/
 .env.test.local
 .env.production.local
 
+# Test Results
+test-results/
+playwright-report/
+
 # IDE
 .vscode/
 .idea/
