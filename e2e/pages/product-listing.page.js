@@ -27,6 +27,18 @@ class ProductListingPage {
   async openProductDetails(productId) {
     await this.productCard(productId).click();
   }
+
+  async openFirstProductAndGetDetails() {
+    const firstProductCard = this.productCards.first();
+    const productHref = await firstProductCard.getAttribute('href');
+    const productId = productHref.split('/').pop();
+    const productName = (
+      await firstProductCard.locator('[data-testid^="product-name-"]').innerText()
+    ).trim();
+
+    await firstProductCard.click();
+    return { productId, productName };
+  }
 }
 
 module.exports = {

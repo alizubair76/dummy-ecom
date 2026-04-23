@@ -30,6 +30,14 @@ class CheckoutPage {
   async placeOrder() {
     await this.placeOrderButton.click();
   }
+
+  summaryItemName(productId) {
+    return this.page.getByTestId(`summary-item-name-${productId}`);
+  }
+
+  orderItemName(index) {
+    return this.page.getByTestId(`order-item-name-${index}`);
+  }
 }
 
 module.exports = {

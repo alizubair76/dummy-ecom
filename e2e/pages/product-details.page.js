@@ -23,6 +23,14 @@ class ProductDetailsPage {
   async addToCart(productId) {
     await this.addToCartButton(productId).click();
   }
+
+  cartBadge() {
+    return this.page.getByTestId('cart-badge');
+  }
+
+  async goToCartFromHeader() {
+    await this.page.getByTestId('cart-link').click();
+  }
 }
 
 module.exports = {

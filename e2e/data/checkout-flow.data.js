@@ -1,9 +1,5 @@
 const CHECKOUT_FLOW_DATA = {
-  product: {
-    id: 1,
-    name: 'Wireless Headphones',
-    quantity: 2,
-  },
+  quantity: 2,
   customer: {
     firstName: 'John',
     lastName: 'Doe',
