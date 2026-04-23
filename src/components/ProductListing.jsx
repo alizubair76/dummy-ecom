@@ -40,26 +40,27 @@ export default function ProductListing() {
   };
 
   if (loading) {
-    return <div className="loading">Loading products...</div>;
+    return <div className="loading" data-testid="loading-message">Loading products...</div>;
   }
 
   if (error) {
-    return <div className="error">{error}</div>;
+    return <div className="error" data-testid="error-message">{error}</div>;
   }
 
   return (
-    <div className="product-listing">
-      <div className="listing-header">
-        <h1>Our Products</h1>
-        <p className="subtitle">Browse our collection of premium tech products</p>
+    <div className="product-listing" data-testid="product-listing-container">
+      <div className="listing-header" data-testid="listing-header">
+        <h1 data-testid="page-title">Our Products</h1>
+        <p className="subtitle" data-testid="page-subtitle">Browse our collection of premium tech products</p>
       </div>
 
-      <div className="filters">
-        <h3>Filter by Category</h3>
-        <div className="category-buttons">
+      <div className="filters" data-testid="filters-section">
+        <h3 data-testid="filter-title">Filter by Category</h3>
+        <div className="category-buttons" data-testid="category-buttons-container">
           {categories.map(category => (
             <button
               key={category}
+              data-testid={`category-btn-${category}`}
               className={`category-btn ${selectedCategory === category ? 'active' : ''}`}
               onClick={() => handleCategoryFilter(category)}
             >
@@ -69,18 +70,18 @@ export default function ProductListing() {
         </div>
       </div>
 
-      <div className="products-count">
+      <div className="products-count" data-testid="products-count">
         Showing {filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''}
       </div>
 
       {filteredProducts.length === 0 ? (
-        <div className="no-products">
+        <div className="no-products" data-testid="no-products">
           <p>No products found in this category.</p>
         </div>
       ) : (
-        <div className="products-grid">
+        <div className="products-grid" data-testid="products-grid">
           {filteredProducts.map(product => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product.id} product={product} data-testid={`product-card-${product.id}`} />
           ))}
         </div>
       )}
