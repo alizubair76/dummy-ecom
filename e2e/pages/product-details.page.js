@@ -124,6 +124,23 @@ class ProductDetailsPage {
   async goToCartFromHeader() {
     await this.page.getByTestId('cart-link').click();
   }
+
+  // Error handling methods
+  notFoundContainer() {
+    return this.page.getByTestId('product-not-found');
+  }
+
+  notFoundTitle() {
+    return this.page.getByTestId('not-found-title');
+  }
+
+  notFoundMessage() {
+    return this.page.getByTestId('not-found-message');
+  }
+
+  async backToProductsFromNotFound() {
+    await this.backToProductsButton.click();
+  }
 }
 
 module.exports = {

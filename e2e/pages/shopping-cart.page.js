@@ -4,6 +4,7 @@ class ShoppingCartPage {
     this.container = page.getByTestId('shopping-cart-container');
     this.pageTitle = page.getByTestId('cart-page-title');
     this.checkoutButton = page.getByTestId('checkout-btn');
+    this.summaryTotal = page.getByTestId('summary-total-value')
   }
 
   cartItemName(productId) {
@@ -16,6 +17,10 @@ class ShoppingCartPage {
 
   async proceedToCheckout() {
     await this.checkoutButton.click();
+  }
+
+  getCartItemLineTotal() {
+    return this.summaryTotal;
   }
 }
 

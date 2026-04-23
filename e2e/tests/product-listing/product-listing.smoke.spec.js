@@ -2,7 +2,7 @@ const { test, expect } = require('../../fixtures/test-base');
 const { PRODUCT_LISTING_DATA } = require('../../data/product-listing.data');
 
 test.describe('Product Listing Smoke', () => {
-  test('shows products and supports category filtering @smoke', async ({ app }) => {
+  test('Verify products and supports category filtering @smoke', async ({ app }) => {
     const { productListingPage } = app;
 
     await test.step('Navigate to product listing page', async () => {
