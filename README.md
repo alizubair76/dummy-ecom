@@ -95,6 +95,29 @@ A simple E-Commerce application built with React and Vite, featuring product lis
 
 ```
 dummy-ecom/
+├── e2e/
+│   ├── app/
+│   │   └── app.factory.js              # App factory composed in test fixture
+│   ├── data/
+│   │   ├── checkout-flow.data.js       # Checkout test input data
+│   │   └── product-listing.data.js     # Product listing expected values
+│   ├── fixtures/
+│   │   └── test-base.js                # Shared Playwright fixture (exposes { app })
+│   ├── pages/
+│   │   ├── checkout.page.js            # Checkout page object
+│   │   ├── product-details.page.js     # Product details page object
+│   │   ├── product-listing.page.js     # Product listing page object
+│   │   └── shopping-cart.page.js       # Shopping cart page object
+│   ├── tests/
+│   │   ├── checkout/
+│   │   │   └── product-checkout.smoke.spec.js
+│   │   ├── product-detail/
+│   │   │   ├── product-detail-rendering.smoke.spec.js
+│   │   │   ├── product-detail-navigation.smoke.spec.js
+│   │   │   └── product-detail-instock.smoke.spec.js
+│   │   └── product-listing/
+│   │       └── product-listing.smoke.spec.js
+│   └── product-detail-page-scenarios.md # Product detail scenario catalogue
 ├── src/
 │   ├── components/
 │   │   ├── Header.jsx                 # Navigation header with cart and orders link
@@ -124,8 +147,41 @@ dummy-ecom/
 │   └── index.css
 ├── public/                            # Static assets
 ├── index.html                         # HTML entry point
+├── playwright.config.js               # Playwright configuration and web server
 ├── vite.config.js                    # Vite configuration
 └── package.json                      # Project dependencies
+```
+
+## E2E Test Automation Structure
+
+The E2E suite is organized by **UI functionality** instead of test type to keep related coverage together and make ownership clearer.
+
+- `e2e/tests/product-listing/`
+  - `product-listing.smoke.spec.js`: validates listing page rendering and category filtering.
+- `e2e/tests/product-detail/`
+  - `product-detail-rendering.smoke.spec.js`: validates product detail page load and core rendering blocks.
+  - `product-detail-navigation.smoke.spec.js`: validates listing-to-detail, back-to-listing, browser back, and direct URL navigation flows.
+  - `product-detail-instock.smoke.spec.js`: validates in-stock controls, quantity behavior, and input constraints.
+- `e2e/tests/checkout/`
+  - `product-checkout.smoke.spec.js`: validates complete checkout flow from listing to order confirmation.
+
+### Framework Design
+
+- `App Factory` (`e2e/app/app.factory.js`): initializes all page objects once and exposes a single `app` fixture object in tests.
+- `Page Objects` (`e2e/pages/`): encapsulate locators and page interactions; tests avoid direct locator usage.
+- `Fixture` (`e2e/fixtures/test-base.js`): initializes Playwright test with `app`.
+- `Test Data` (`e2e/data/`): centralizes expected data and reusable inputs.
+
+### Running E2E Tests
+
+```bash
+npm run test:e2e
+```
+
+Run only smoke-tagged coverage:
+
+```bash
+npm run test:e2e:smoke
 ```
 
 ## Getting Started
