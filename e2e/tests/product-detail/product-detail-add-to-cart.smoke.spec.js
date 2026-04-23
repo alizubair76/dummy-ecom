@@ -111,7 +111,7 @@ test.describe('Product Detail - Add to Cart Functional Scenarios @smoke', () => 
     });
   });
 
-  test('B11 Verify cart badge count updates after adding product @smoke', async ({ app }) => {
+  test('Verify cart badge count updates after adding product @smoke', async ({ app }) => {
     const { page, header } = app;
 
     await test.step('Add product to cart', async () => {
