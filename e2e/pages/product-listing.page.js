@@ -19,6 +19,14 @@ class ProductListingPage {
   async filterByCategory(categoryName) {
     await this.categoryButton(categoryName).click();
   }
+
+  productCard(productId) {
+    return this.page.getByTestId(`product-card-${productId}`);
+  }
+
+  async openProductDetails(productId) {
+    await this.productCard(productId).click();
+  }
 }
 
 module.exports = {
