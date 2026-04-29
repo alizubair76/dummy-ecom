@@ -1,0 +1,11 @@
+# K6 Results - Gitignore
+
+# Ignore JSON result files
+*.json
+
+# Ignore local cache
+.cache
+.venv
+
+# Keep the results directory but ignore files
+!.gitkeep
