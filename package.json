@@ -12,7 +12,15 @@
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:e2e": "playwright test",
-    "test:e2e:smoke": "playwright test --grep @smoke"
+    "test:e2e:smoke": "playwright test --grep @smoke",
+    "test:k6": "k6 run",
+    "test:k6:smoke": "k6 run k6/tests/smoke-test.js",
+    "test:k6:load": "k6 run k6/tests/load-test.js",
+    "test:k6:stress": "k6 run k6/tests/stress-test.js",
+    "test:k6:spike": "k6 run k6/tests/spike-test.js",
+    "test:k6:soak": "k6 run k6/tests/soak-test.js",
+    "test:k6:flow": "k6 run k6/tests/user-flow.js",
+    "test:k6:breakpoint": "k6 run k6/tests/breakpoint-test.js"
   },
   "dependencies": {
     "react": "^19.2.5",
