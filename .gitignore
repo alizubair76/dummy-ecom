@@ -19,6 +19,9 @@ build/
 # Test Results
 test-results/
 playwright-report/
+jmeter-report/
+*.jtl
+*.log
 
 # IDE
 .vscode/
