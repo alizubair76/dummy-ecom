@@ -20,6 +20,8 @@ build/
 test-results/
 playwright-report/
 jmeter-report/
+*.jtl
+*.log
 
 # IDE
 .vscode/

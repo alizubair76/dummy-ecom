@@ -798,7 +798,7 @@ ISC
 
 ## Author
 
-Your Name
+Zubair Khan
 
 ---
 
