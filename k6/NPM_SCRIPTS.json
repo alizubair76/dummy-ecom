@@ -1,0 +1,26 @@
+/**
+ * K6 Test Runner - npm scripts helper
+ * Add these scripts to your package.json to run k6 tests via npm
+ * 
+ * Usage:
+ *   npm run test:k6:smoke
+ *   npm run test:k6:load
+ *   npm run test:k6:all
+ * 
+ * Copy the scripts below and add them to your package.json "scripts" section
+ */
+
+{
+  "scripts": {
+    "test:k6": "k6 run",
+    "test:k6:smoke": "k6 run k6/tests/smoke-test.js",
+    "test:k6:load": "k6 run k6/tests/load-test.js",
+    "test:k6:stress": "k6 run k6/tests/stress-test.js",
+    "test:k6:spike": "k6 run k6/tests/spike-test.js",
+    "test:k6:soak": "k6 run k6/tests/soak-test.js",
+    "test:k6:flow": "k6 run k6/tests/user-flow.js",
+    "test:k6:breakpoint": "k6 run k6/tests/breakpoint-test.js",
+    "test:k6:all": "k6 run k6/tests/smoke-test.js && k6 run k6/tests/load-test.js && k6 run k6/tests/stress-test.js && k6 run k6/tests/spike-test.js",
+    "test:k6:report": "k6 run k6/tests/smoke-test.js --out json=k6/results/report.json"
+  }
+}
